@@ -8,14 +8,28 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
     <link href="static/fontawesome/css/all.min.css" rel="stylesheet" />
     <link href="static/css/templatemo-comparto.css" rel="stylesheet" />
-    <title>Comparto HTML CSS Template</title>
-<!--
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="static/css/leaflet.css">
+    <link rel="stylesheet" href="static/css/qgis2web.css"><link rel="stylesheet" href="static/css/fontawesome-all.min.css">
+    <style>
+    #map {
+        width: 595px;
+        height: 579px;
+    }
+    .leaflet-control-messagebox {
+	display: none; /* Initially hidden */
+	border: 2px solid rgb(165, 207, 117);
+	background-color: white;
+    padding: 3px 10px;
+    font-size: large;
+    }
+    </style>
+    <title>Shajr Stats</title>
 
-Comparto TemplateMo
-
-https://templatemo.com/tm-544-comparto
-
--->
 </head>
 
 <body>
@@ -31,26 +45,26 @@ https://templatemo.com/tm-544-comparto
                     <ul>
                         <li class="tm-nav-item current">
                             <a href="#about" class="tm-nav-link">
-                                <span class="tm-mb-1">.01</span>
-                                <span>About</span>
+                                <i class="fas fa-map fa tm-mb-1"></i>
+                                <span>Map</span>
                             </a>
                         </li>
                         <li class="tm-nav-item">
                             <a href="#services" class="tm-nav-link">
-                                <span class="tm-mb-1">.02</span>
-                                <span>Services</span>
+                                <i class="fas fa-chart-bar fa tm-mb-1"></i>
+                                <span>Analysis</span>
                             </a>
                         </li>
                         <li class="tm-nav-item">
                             <a href="#gallery" class="tm-nav-link">
-                                <span class="tm-mb-1">.03</span>
-                                <span>Gallery</span>
+                                <i class="fas fa-file fa tm-mb-1"></i>
+                                <span>Report</span>
                             </a>
                         </li>
                         <li class="tm-nav-item">
                             <a href="#contact" class="tm-nav-link">
-                                <span class="tm-nav-text tm-mb-1">.04</span>
-                                <span class="tm-nav-text">Contact</span>
+                                <i class="fas fa-flag fa tm-mb-1"></i>
+                                <span>Mission</span>
                             </a>
                         </li>
                     </ul>
@@ -60,15 +74,18 @@ https://templatemo.com/tm-544-comparto
         <section class="tm-mb-1" id="about">
             <div class="tm-row tm-about-row">
                 <div class="tm-section-1-l">
-                    <img src="img/comparto-image-01.jpg" alt="About image" class="tm-img-responsive">
+                    <div id="map"></div>
                 </div>
                 <article class="tm-section-1-r tm-bg-color-8">
-                    <h2 class="tm-mb-2 tm-title-color">.01 Comparto CSS Layout</h2>
-                    <p><a rel="nofollow" href="https://templatemo.com/tm-544-comparto" target="_parent">Comparto</a> is a custom light-weight CSS layout for your website. You can easily adapt and use this for your commercial or personal websites. Feel free to use it.</p>
-                    <p>You cannot redistribute this template ZIP file in any template collection website. Please <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact TemplateMo</a> if you have any question.</p>
-                    <p>Nunc sed gravida elit. Curabitur rutrum elit id lobortis viverra. Fusce at libero dui.</p>
+                    <h2 class="tm-mb-2 tm-title-color">Interactive Map Showing Level of Vegetation throughout Pakistan</h2>
+                    <p>This shows the map of Pakistan calclulated through the <a>NDVI Vegetation Index</a> of the latest LANDSAT imagery
+                    to calclulate the greenery percentage of Pakistan.
+                    </p>
+                    <p>
+                        <strong>Methodology: </stron>This was done through our workbook on <a>Google Earth Engine</a> and then processed using Python scripts, for full walkthrough read our report.
+                    </p>
                     
-                    <a href="#services" class="tm-btn tm-btn-1 tm-link-to-services">More Detail</a>
+                    <a href="#services" class="tm-btn tm-btn-1 tm-link-to-services">View Results</a>
                 </article>
             </div>
         </section>
@@ -76,24 +93,24 @@ https://templatemo.com/tm-544-comparto
             <div class="tm-icon">
                 <div class="tm-icon-inner">
                     <a href="#services">
-                        <i class="fas fa-synagogue fa-4x tm-mb-1"></i>
-                        <p>Aenean vel est id massa condimentum</p>
+                        <i class="fas fa-leaf fa-4x tm-mb-1"></i>
+                        <p>Approximately only % of the area is under green cover</p>
                     </a>
                 </div>
             </div>
             <div class="tm-icon">
                 <div class="tm-icon-inner">
                     <a href="#gallery">
-                        <i class="fas fa-chart-bar fa-4x tm-mb-1"></i>
-                        <p>Suspendisse interdum lectus purus</p>
+                        <i class="fas fa-sun fa-4x tm-mb-1"></i>
+                        <p>The average temperature of Pakistan is rising __.</p>
                     </a>
                 </div>
             </div>
             <div class="tm-icon">
                 <div class="tm-icon-inner">
                     <a href="#contact">
-                        <i class="fas fa-images fa-4x tm-mb-1"></i>
-                        <p>Nulla ac sodales est vel iaculis purus</p>
+                        <i class="fas fa-medkit fa-4x tm-mb-1"></i>
+                        <p>Our soil quality is very poor</p>
                     </a>
                 </div>
             </div>
@@ -101,25 +118,24 @@ https://templatemo.com/tm-544-comparto
         <section class="tm-mb-1 tm-row tm-services-row" id="services">
             <div class="tm-section-2-l">
                 <article class="tm-bg-color-6 tm-box-pad tm-mb-1">
-                    <h2 class="tm-mb-2">.02 Aliquam pretium hendrerit</h2>
-                    <p>Cras tempus, velit amet facilisis venenatis, erat felis imperdiet lectus, at posuere elit metus. Title #333 BG #F2F2F2</p>
-                    <p class="tm-mb-0">Nam iaculis, urna ut laoreet aliquam, massa magna dapibus. Text #666</p>
+                    <h2 class="tm-mb-2">Interactive Drilldown Barchart</h2>
+                    <p>View the distribution of greenery values across Pakistan sorted from highest to lowest</p>
                 </article>
                 <div class="tm-bg-color-7 tm-em-box">
-                    <p class="tm-text-color-2">Nam iaculis, urna ut laoreet aliquam, massa magna dapibus nibh, at pellentesque lectus odio non risus. Nulla ac sodales est, vel iaculis. Text #333 . BG #DDD</p>
-                    <a href="#gallery" class="tm-btn tm-btn-2">Read More</a>
+                    <p class="tm-text-color-2">The current granularity of the data is at the Level 3 Administrative Boundaries Level (Provincial, District & Townwise Segmentation)</p>
+                    <a href="#gallery" class="tm-btn tm-btn-2">View Data</a>
                 </div>
             </div>
             <div class="tm-section-2-r">
                 <!-- Graph interactive -->
-                <div id="graph-container">
+                <div id="graph-container" data-toggle="tooltip" title="Click on the background to go back, and the bar chart to go forward">
   
                 </div>
             </div>
         </section>
         <section class="tm-bg-color-4 tm-mb-3 tm-gallery-section" id="gallery">
             <div class="tm-gallery-header">
-                <h2 class="tm-mb-1 text-right">.03 The Gallery Section</h2>
+                <h2 class="tm-mb-1 text-right">Data Report</h2>
                 <ul class="tm-gallery-filter tabs clearfix filters-button-group">
                     <li><a role="button" href="#" class="active" data-filter="*">Show All</a></li>
                     . <li><a role="button" href="#" data-filter=".nature">Nature</a></li>
@@ -233,58 +249,57 @@ https://templatemo.com/tm-544-comparto
             </div>
         </section> <!-- Gallery -->
         <section id="contact" class="tm-bg-color-5 tm-mb-3">
-            <h2 class="tm-text-white tm-contact-title">.04 Contact Us</h2>
+            <h2 class="tm-text-white tm-contact-title">The Mission</h2>
             <div class="tm-bg-color-white tm-contact-main">
-                <div class="map-outer">
-                    <div class="gmap-canvas">
-                        <!-- How to change your own map point
-                            1. Go to Google Maps
-                            2. Click on your location point
-                            3. Click "Share" and choose "Embed map" tab
-                            4. Copy only URL and paste it within the src="" field below
-                        -->
-                        <iframe width="100%" height="400" id="gmap-canvas"
-                            src="https://maps.google.com/maps?q=Av.+Lúcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <div class="contact-info-outer" id="column1">
+                    <div class="tm-bg-color-1 contact-info">
+                        <h2>The purpose</h2>
+                        <br>
+                        <ul class="tm-mb-0">
+                            <li>Targetted plantation drives to save resources</li>
+                            <li>A data-driven approach helps monitoring and feedback</li>
+                            <li>Auditable and transparent to the public</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="contact-form-outer">
-                    <form id="contact-form" action="" method="POST" class="tm-bg-color-6 tm-contact-form">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Name" required="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Email" required="" />
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="4" name="message" class="form-control" placeholder="Message..."
-                                required=""></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="ml-auto tm-btn tm-btn-3">
-                                Send
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <div class="contact-info-outer">
+                <div class="contact-info-outer" id="column2">
                     <div class="tm-bg-color-6 contact-info">
-                        <p>Pellentesque egestas odio sed tellus dictum, vel lobortis ante vehicula.</p>
-                        <p>Morbi eget accumsan libero, non tincidunt felis.</p>
-                        <p class="tm-mb-0">Tel: <a href="tel:0100200990">010-020-0990</a></p>
-                        <p>Email: <a href="mailto:info@company.com">info@company.com</a></p>
+                        <h2>Whats Next</h2>
+                        <br>
+                        <ul class="tm-mb-0">
+                            <li>Correlation between soil quality and Vegetation</li>
+                            <li>Realtime analysis of Greenery KPIs</li>
+                            <li>Working with government and NGOs to assist them in their programs</li>
+                        </ul>
                     </div>
                 </div>
+                <div class="contact-info-outer" id="column3">
+                    <div class="tm-bg-color-6 contact-info">
+                        <h2>The Team</h2>
+                        <br>
+                        <br>
+                        <ul class="tm-mb-0">
+                            <li>Team Member: Maaz Tariq</li>
+                            <li>Team Member: Talat Zubair</li>
+                            <li>Team Member: Sualeh Ali</li>
+                            <li>Supervisor: Sir Tariq</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <script>
+
+// Javascript
+$("#column1").height($("#column2").height());
+$("#column2").height($("#column3").height());
+                </script>
             </div>
         </section>
         <div class="tm-mb-4 text-center tm-social-s">
-            <a href="https://fb.com/templatemo" class="tm-social-link"><i class="fab fa-facebook tm-social-icon"></i></a>
-            <a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram tm-social-icon"></i></a>
-            <a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter tm-social-icon"></i></a>
-            <a href="https://youtube.com" class="tm-social-link"><i class="fab fa-youtube tm-social-icon"></i></a>
+                <h4>#LetsMakePakistanGreenAgain</h4>
         </div>
         <footer class="text-center tm-mb-1">
-            <p>Copyright &copy; 2020 Comparto Studio 
+            <p>Shajr Stats &copy; 2020 Shajr Stats
             
             - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
         </footer>
@@ -391,5 +406,16 @@ https://templatemo.com/tm-544-comparto
             });
         });
     </script>
+            <script src="static/js/qgis2web_expressions.js"></script>
+            <script src="static/js/leaflet.js"></script>
+            <script src="static/js/leaflet.rotatedMarker.js"></script>
+            <script src="static/js/leaflet.pattern.js"></script>
+            <script src="static/js/leaflet-hash.js"></script>
+            <script src="static/js/Autolinker.min.js"></script>
+            <script src="static/js/rbush.min.js"></script>
+            <script src="static/js/labelgun.min.js"></script>
+            <script src="static/js/labels.js"></script>
+            <script src="static/data/greencities_export_1.js"></script>
+            <script src="static/js/leaflet-script.js"></script>
 </body>
 </html>

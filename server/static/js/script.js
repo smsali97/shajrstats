@@ -2,6 +2,12 @@
 var definitionVisualization = {};
 var data;
 
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip(delay={
+      show: 0, hide: 4000
+  });
+});
+
 fetch('https://127.0.0.1:8000/data')
 .then((response) => {
     return response.json()
