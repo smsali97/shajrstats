@@ -86,7 +86,6 @@ def data():
                 district_d["colorIndex"] = color_index % MAX_COLOR_RANGE
                 district_l.append(district_d)
     d = {"label": "Pakistan", "children":processed_list}
-    print(d)
     # return (json.dumps(d))
     # return jsonify(processed_list)
     return jsonify(d)
