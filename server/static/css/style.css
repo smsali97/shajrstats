@@ -1,0 +1,44 @@
+#logo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+   max-width: 50%;
+   max-height: 50%;
+}
+
+
+body {
+  background-color: #f1f7ed;
+}
+
+
+#graph-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+text {
+  font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* text-anchor: middle; */
+  font-weight: bold;
+  pointer-events: none;
+}
+
+rect.background {
+  fill: white;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+}
