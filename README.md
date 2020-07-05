@@ -1,7 +1,7 @@
 # Shajr Stats
 ![logo](app/static/img/shajrstats.png)
 
-Scans satelite imagery to generate data drive dashboards regarding the vegetation greenery of Pakistan
+Scans satelite imagery to generate data driven dashboards regarding the vegetation greenery of Pakistan
 On a mission to *#MakePakistanGreenAgain*
 
 # Usage
@@ -13,6 +13,6 @@ On a mission to *#MakePakistanGreenAgain*
 - Pandas
 - Gunicorn
 
-# Deployed Url:
+# Application Link:
 
 Deployed on [Heroku](https://shajr-stats.herokuapp.com)
